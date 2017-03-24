@@ -1,0 +1,123 @@
+\documentclass[12pt]{amsart}
+\usepackage{amsmath,cmap,amssymb}
+\begin{document}
+
+\section{Introduction}
+\label{sec:intro}
+
+Then $\delta$ is a congruence relation. I can type formulas!
+
+A source file is made up of text, formulas (e.g.,$\sqrt{5}$), and \emph{instructions to} \LaTeX (\TeX).
+
+\section{Some subtle differences}
+\label{sec:diffs}
+\begin{enumerate}
+\item My first integral: $\int \zeta^{2}(x) \, dx$. (with \verb"\,") % \, създава полуинтервал
+
+\item My first integral: $\int \zeta^{2}(x) \ dx$. (with \verb"\ ") % \ създава друг вид интервал
+
+\item My first integral: $\int \zeta^{2}(x) dx$. (with \verb"  ") % просто интервал
+
+\end{enumerate}
+
+FORTRAN. New \dots
+
+FORTRAN\@. New \dots
+
+fortran. New \dots
+
+fortran\@. New \dots
+
+Prof. Stan Lee Djalev
+
+Prof.~Stan Lee Djalev
+
+
+\section{Cool symbols}
+\label{sec:symbols}
+
+\subsection{Need amssymb}
+
+$$
+\varnothing  \circledS  \bigstar  \mho  \eth  \cdot
+$$
+
+\section{From samples}
+
+\begin{flushright}
+\today \\ some text
+\end{flushright}
+\textbf{From the desk of Prof.~Djalev}
+
+April 7--21 \emph{please} use my
+temporary e-mail address:
+
+\begin{center}
+\texttt{StanLeeDjalev@dota2.org} \\ some new text % \texttt typewriter font
+\end{center}
+some newer new text
+
+It is of some concern to me that the terminology used in multi-section math courses is not uniform.
+In several sections of the course on matrix theory, the term ``hamiltonian-reduced'' is used.
+I, personally, would rather call these ``hyper-simple''. I invite others to comment on this  problem.
+
+\section{Formulae}
+In first-year calculus, we define intervals such as $(u, v)$ and $(u, \infty)$.
+Such an interval is a \emph{neighborhood} of $a$ if $a$ is in the interval.
+Students should realize that $\infty$ is only a symbol, not a number.
+This is important since we soon introduce concepts such as $\lim_{x \to \infty} f(x)$.
+When we introduce the derivative
+\[
+\lim_{x \to a} \frac{f(x) - f(a)}{x - a},
+\]
+we assume that the function is defined and continuous in a neighborhood of $a$.
+
+\[
+\left( \frac{1 + x}{2 + y^{2}} \right)^{2}
+\]
+
+\begin{align}
+\frac{3+x}{5} &= 2 \notag \\
+3+x &= 10 \notag \\
+x &= 10 - 3 \notag \\
+x &= 7 \notag \\
+\end{align}
+
+\subsection{Matrix}
+\[
+\begin{pmatrix}
+a + b + c & uv & x - y & 27\\
+a + b & u + v & z & 134
+\end{pmatrix}
+\]
+
+\subsection{Integrals}
+
+$\int_{0}^{\pi} \sin x \, dx = 2$
+
+\subsection{Other}
+
+$F(x_{1}, \dots, x_{n})$ \\
+$x_{1} + \dots + x_{n}$ \\
+$\varpi = \pi = 3,14 = 3.14 \ne 4.20$ \\
+$R^3 \notin R^2$ \\
+$\bar M, \overline M, \mathcal{Q}, \mathbb{R}$
+
+\subsection{Arrows}
+\begin{enumerate}
+\item $\to$ with \verb"\to"
+\item $\rightarrow$ with \verb"\rightarrow"
+\item $\Rightarrow$ with \verb"\Rightarrow"
+\item $\Leftrightarrow$ with \verb"\Leftrightarrow"
+\end{enumerate}
+
+\section{Text size}
+
+\begin{tabular}{c|c|c}
+\Tiny Tiny  text & \tiny tiny  text & \SMALL SMALL  text  \\\hline
+\Small Small  text & \small small  text & \normalsize normalsize  text  \\\hline
+\large large  text & \Large Large  text & \LARGE LARGE  text \\\hline
+ & \Huge Huge  text & 
+\end{tabular}
+
+\end{document}
