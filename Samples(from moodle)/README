@@ -1,0 +1,87 @@
+Sample files for the book `(More) Math into LaTeX', 5th edition.
+
+In addition, there are two excerpts from the book:
+ - Mission Impossible, to help you get started quickly with LaTeX,
+ - Symbol Tables, math and text symbol tables,
+and the STIX.pdf symbol table.
+
+The samples are in the public domain, the Mission Impossible is copyrighted, 
+but can be freely distributed.
+
+Files:
+
+amsart.tpl
+amsproc.tpl 
+babybeamer1.pdf
+babybeamer1.tex
+babybeamer2.pdf
+babybeamer2.tex
+babybeamer3.pdf
+babybeamer3.tex
+babybeamer4.pdf
+babybeamer4.tex
+babybeamer5.pdf
+babybeamer5.tex
+babybeamer6.pdf
+babybeamer6.tex
+babybeamer6block.pdf
+babybeamer6block.tex
+babybeamer7.pdf
+babybeamer7.tex
+babybeamer8.pdf
+babybeamer8.tex
+babybeamer9.pdf
+babybeamer9.tex
+babybeamer10.pdf
+babybeamer10.tex
+basem3-1.eps
+basem3-1.pdf
+basem3-2.eps
+basem3-2.pdf
+basem3-3.eps
+basem3-3.pdf
+basem3-4.eps
+basem3-4.pdf
+beamerstructure1.tex
+beamerstructure1.pdf
+beamerstructure2.tex
+beamerstructure2.pdf
+cleardoublepage.sty
+covers.pdf
+firstarticle.tex
+firstarticlei.tex
+firstarticleill.tex
+firstpresentation.tex
+fonttbl.tex
+formulanote.tex
+german.tex
+ggamsart.tpl
+inbibl.tpl
+legacy-article.tex
+letter.tex
+Louisville.tex
+Louisville.pdf
+Mission Impossible.pdf
+newlattice.sty
+NoticesV.pdf
+NoticesVI.pdf
+products.pdf
+quickbeamer.pdf
+quickbeamer.tex
+quickbeamer1.pdf
+quickbeamer1.tex
+quickbeamer2.pdf
+quickbeamer2.tex
+sample.cls
+secondarticle-ref.tex
+secondarticle.tex
+secondarticleb.bib
+secondarticleb.tex
+secondarticleccom.tex
+STIX.pdf
+Symbol Tables.pdf
+template.bib 
+textnote1.tex
+textnote1bad.tex
+textnote2.tex
+topmat.tpl 
