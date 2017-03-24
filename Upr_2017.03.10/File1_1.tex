@@ -1,0 +1,91 @@
+\documentclass[12pt,leqno]{article} % 12pt - големина на текста; leqno - уравненията са номерирани отляво; fleqn - уравненията са изписани вляво, освен при $$
+
+%Begin Preamble Начало на преамбюл
+\usepackage{amsmath,cmap} % cmap позволява търсене на думи на кирилица
+\usepackage[T2A]{fontenc} % кодировка за шрифтове на кирилица
+\usepackage[cp1251]{inputenc} % кодировка windows-1251 за кирилица
+\usepackage[english,bulgarian]{babel} % писане на български и английски език, последният език е текущ
+%End Preamble Край на преамбюл
+
+\begin{document}
+Здравей, свят! Hello, world! $\sum\limits_{i=0}^{n} a_{i} + x^2 - x^{\sqrt{B_0}}$ Тест1. % формула с $
+
+\begin{equation}
+\sum\limits_{i=0}^{n} a_{i} + x^2 - x^{\sqrt{B_0}} % отделена формула с $$ или \begin{equation}
+\end{equation}
+
+Здравей, свят! Hello, world! % в същия параграф като преди
+
+Здравей, свят! \par Hello, world! % в два нови параграфа
+\\ % празен ред
+\par
+
+\textit{This is now in italic with} \verb"\textit".
+
+\emph{And this is emphasized with} \verb"\emph".
+
+\textsl{This is slanted with} \verb"\textsl".
+
+\textbf{This is in boldface with} \verb"\textbf".
+
+\textbf{\emph{And now both}} \verb"\textbf" \textbf{\emph{and}} \verb"\emph".
+
+\textbf{\textit{And now both}} \verb"\textbf" \textbf{\textit{and}} \verb"\textit".
+
+\textbf{\textsl{And now both}} \verb"\textbf" \textbf{\textsl{and}} \verb"\textsl".
+
+\begin{equation}
+\alpha + \beta - ( \sigma / \omega ) \approx 7.5349...
+\end{equation}
+
+% \alpha
+% $ Гръцките букви работят само в математически режим $
+
+Има 4 типа за знака тире (минус):
+-a, % дефис
+$-a$, % унарен минус 
+$a-b$, % бинарен минус
+--, % endash 
+---. % emdash
+
+``Kавички'', `дума', "още един тип".
+
+Различни точки:
+\dots, \ldots, ...
+
+% \par нов параграф
+
+\begin{itemize}
+\item Курсова работа
+\item Изпит
+\item Оценка
+\end{itemize}
+
+Интересни знаци:
+\begin{equation}
+\int
+\Sigma
+\cap
+\Delta
+\
+\cap
+\cup
+\Delta
+\Sigma
+\int
+\end{equation}
+
+\begin{equation}
+\lambda
+\alpha
+\top
+\varepsilon
+\chi
+\end{equation}
+
+\end{document}
+
+% PDF файла трябва да е с Type1 Font
+% Insert/Remove Comment с right click
+% Няколко интервала накуп са като един
+% Няколко празни реда накуп са като един 
