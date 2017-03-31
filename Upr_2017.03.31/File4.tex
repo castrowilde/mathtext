@@ -1,0 +1,226 @@
+\documentclass[12pt]{amsart}
+\DeclareMathOperator\sign{\mathbf{sgn}} % signum функция
+\begin{document}
+
+\section{The building blocks of a formula}
+
+A formula (inline or displayed) is built from components. We group them as follows:
+\begin{itemize} % неномериран списък
+\item
+Arithmetic
+\item
+Binomial coefficients
+\item
+Congruences
+\item
+Delimiters
+\item
+Ellipses
+\item
+Integrals
+\item
+Math accents
+\item
+Matrices
+\item
+Operators
+\item
+Roots
+\item
+Text
+\end{itemize}
+
+In this section, I describe each of these groups, and provide examples illustrating
+their use. Read carefully the groups you need!
+
+\begin{description} % описание на нещо
+\item[Arithmetic]
+We type the arithmetic operations $a + b$, $a-b$, $-a$, $a/b$, and $a$b
+in the natural way: \verb"$a + b$", \verb"$a - b$", \verb"$-a$",
+\verb"$a / b$", and \verb"$a b$" (the spaces are typed only for readability).
+
+If you wish to use $\cdot$ or $\times$ for multiplication, as in
+$a \cdot b$ or $a \times b$, use \verb"\cdot" or \verb"\times", respectively.
+The formulas $a \cdot b$ and $a \times b$ are typed as \verb"$a \cdot b$"
+and \verb"$a \times b$".
+
+Displayed fractions, such as
+\[
+\frac{1 + 2x}{x + y + xy}
+\]
+are typed with \verb"\frac":
+\begin{verbatim}
+\[
+\frac{1 + 2x}{x + y + xy}
+\]
+\end{verbatim}
+\item[Subscripts and superscripts]
+Subscripts are typed with \verb"_" and superscripts with \verb"^" (caret).
+Subscripts and superscripts should be enclosed in braces, that is, typed
+between \verb"{" and \verb"}". To get $a_1$, type \verb"$a_{1}$".
+Omitting the braces in this example causes no harm, but to get $a_{10}$,
+you must type \verb"$a_{10}$". Indeed, \verb"$a_10$" is typeset as $a_10$.
+
+There is one symbol, the prime (\verb|'|), that is automatically superscripted
+in a formula. To get $f'(x)$, just type \verb=$f'(x)$=.
+(On many keyboards, the symbol on the key looks like this: \verb"`")
+
+\item[Binomial coefficients]
+Binomial coefficients are typeset with the \verb"\binom" command.
+\verb"\binom{a}{b + c}" is here inline: $\binom{a}{b + c}$, whereas
+\[
+\binom{a}{b + c}
+\]
+is the displayed version.
+\item[Congruences]
+The two most important forms are
+\[
+a \equiv v \pmod{\theta}
+\quad
+\text{typed as }\verb"$a \equiv v \pmod{\theta}$"
+\]
+\[
+a \equiv v \pod{\theta}
+\quad
+\text{typed as }\verb"$a \equiv v \pod{\theta}$"
+\]
+\item[Delimiters]
+Parentheses and square brackets are examples of delimiters. They are used
+to delimit some subformulas, as in \verb"$[(a*b)+(c*d)]^{2}$", which
+typesets as $[(a*b)+(c*d)]^{2}$. \LaTeX\ can be instructed to expand them vertically to enclose a formula such as
+\[
+\left(\frac{1 + x}{2 + y^2}\right)^2
+\]
+which is typed as
+\begin{verbatim}
+\[
+\left( \frac{1 + x}{2 + y^{2}} \right)^{2}
+\]
+\end{verbatim}
+The \verb"\left(" and \verb"\right)" commands tell \LaTeX\ to size
+the parentheses correctly, relative to the size of the formula inside
+the parentheses; sometimes the result is pleasing, sometimes not.
+\item[Ellipses] % в оригиналния файл беше {Ellipses}, което е грешно!
+In a formula, the ellipsis is printed either as \emph{low}
+(or \emph{on-the-line}) dots:
+
+$F(x_1,\dots,x_n)$\quad is typed as\qquad \verb"$F(x_{1}, \dots, x_{n})$"
+
+or as centered dots:
+
+$x_1 + \dots + x_n$\quad is typed as\qquad $x_{1} + \dots + x_{n}$
+
+Use \verb"\cdots" and \verb"\ldots" if \verb"\dots" does not work as expected.
+\item[Integrals]
+The command for an integral is \verb"\int". The lower limit is specified
+as a subscript and the upper limit is specified as a superscript.
+For example, the formula $\int_{0}^{\pi} \sin x \, dx = 2$ is typed as
+\verb"$\int_{0}^{\pi} \sin x \, dx = 2$",
+where \verb"\," is a spacing command.
+
+The formula looks bad without the spacing command: \\
+$\int_{0}^{\pi} \sin x dx = 2$.
+\item[Math accents]
+The four most frequently used math accents are:
+
+$\bar{a}$ typed as \verb"$\bar{a}$"
+
+$\hat{a}$ typed as \verb"$\hat{a}$"
+
+$\tilde{a}$ typed as \verb"$\tilde{a}$"
+
+$\vec{a}$ typed as \verb"$\vec{a}$"
+
+\item[Matrices]
+
+Matrix without delimiters:
+\[
+\begin{matrix}
+a + b + c & uv & x - y & 27\\
+a + b & u + v & z & 134
+\end{matrix}
+\]
+Matrices with delimiters:
+\[
+\mathbf{A} =
+\begin{pmatrix}
+a + b + c & uv\\
+a + b & u + v
+\end{pmatrix}
+\begin{vmatrix}
+30 & 7\\
+3 & 17
+\end{vmatrix}
+\begin{bmatrix}
+30 & 7\\
+3 & 17
+\end{bmatrix}
+\begin{Vmatrix}
+30 & 7\\
+3 & 17
+\end{Vmatrix}
+\]
+This is done with \verb"\begin" and then \verb"{pmatrix}",\verb"{vmatrix}",\verb"{bmatrix}" and \verb"{Vmatrix}."
+\begin{verbatim}
+\[
+\mathbf{A} =
+\begin{pmatrix}
+a + b + c & uv\\
+a + b & u + v
+\end{pmatrix}
+\begin{vmatrix}
+30 & 7\\
+3 & 17
+\end{vmatrix}
+\begin{bmatrix}
+30 & 7\\
+3 & 17
+\end{bmatrix}
+\begin{Vmatrix}
+30 & 7\\
+3 & 17
+\end{Vmatrix}
+\]
+\end{verbatim}
+% подравняване на уравнения
+\item[Cases]
+\begin{equation}\label{E:cases}
+\sign{(x)} = 
+\begin{cases}
+-1, &\text{if $x < 0$;}\\
+0, &\text{if $x = 0$;}\\
+1, &\text{if $x > 0$.}
+\end{cases}
+\end{equation}
+\item[Simple Alignment]
+\begin{align}
+r^{2} &= s^{2} + t^{2}, \label{E:Pyth}\\
+2u + 1 &= v + w^{\alpha}, \label{E:alpha}\\
+x &= \frac{y + z}{\sqrt{s + 2u}};\label{E:frac}
+\end{align}
+\item[Annotated Alignment]
+\begin{align}
+x &= x \wedge (y \vee z)
+&&\text{(by distributivity)}\label{E:DoAlign}\\
+&= (x \wedge y) \vee (x \wedge z)
+&&\text{(by condition (M))} \notag\\
+&= y \vee z. \notag
+\end{align}
+This one has the equation number on the middle row:
+\begin{equation}
+\begin{aligned}
+x &= x \wedge (y \vee z)
+&&\text{(by distributivity)}\label{E:DoAlign2}\\
+&= (x \wedge y) \vee (x \wedge z)
+&&\text{(by condition (M))}\\
+&= y \vee z.
+\end{aligned}
+\end{equation}
+\item[Equations]
+Example equation with Integral:
+\begin{equation}\label{E:firsteq}
+\int_{0}^{\infty} x+1 \, dx
+\end{equation}
+Reference example: \emph{Check (\ref{E:Pyth}) on page~\pageref{E:Pyth}}
+\end{description}
+\end{document} 
