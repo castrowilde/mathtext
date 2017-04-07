@@ -1,0 +1,61 @@
+\documentclass[draft]{tv2}
+
+\theoremstyle{plain}
+\newtheorem{thm}{Теорема}[chapter]%\label{thm:1.1}
+\newtheorem*{Theorem}{Теорема}
+\newtheorem{lemma}{Лема}[chapter]%\label{l:1.1}
+
+\newtheorem{cor}{Следствие}[chapter]%\label{cor:1.1}
+\newtheorem*{Cor}{Следствие}
+\theoremstyle{definition}
+\newtheorem{dfn}{Определение}[chapter]%\label{dfn:1.1}
+\newtheorem{ex}{Пример}[chapter]%\label{ex:1.2.3}
+\newtheorem*{Ex}{Пример}%
+
+\theoremstyle{remark}
+\newtheorem{note}{Забележка}[chapter]%\label{note:1.2}
+\newtheorem*{Note}{Забележка}
+
+%Броячи, които се настройват според конкретния текст
+%\setcounter{chapter}{1}               %Глава
+%\setcounter{equation}{1}              %Уравнение
+%\setcounter{pr}{1}                    %Задача
+%\setcounter{note}{1}                  %Забележка
+%\setcounter{ex}{1}                    %Пример
+%\setcounter{thm}{1}                   %Теорема
+%\setcounter{lemma}{1}                 %Лема
+%\setcounter{cor}{1}                   %Следствие
+%\setcounter{dfn}{1}                   %Определение
+%\setcounter{note}{1}                  %Забележка
+%\setcounter{ex}{1}                    %Пример
+%\setcounter{pr}{1}                    %Задача
+
+\begin{document}
+\allowdisplaybreaks
+
+\pagestyle{main}
+\input tips17
+
+\pagestyle{main}
+\input ch1
+
+\begin{lemma} Твърдение
+\end{lemma}
+
+\begin{thm} Твърдение
+\end{thm}
+
+\begin{cor} Твърдение
+\end{cor}
+
+\begin{note} Твърдение
+\end{note}
+
+\begin{ex} Пример $\cov A\simP B$
+\end{ex}
+
+\nocite{*}
+\bibliographystyle{tv2}
+\bibliography{tv2}
+
+\end{document}
