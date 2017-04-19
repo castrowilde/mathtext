@@ -1,0 +1,296 @@
+%Математическа текстообработка
+%Курсова работа
+%Християн Марков, ф.н. 00147
+%2016-17
+%
+%Проект: "Теория на вероятностите - 2"
+%стр. 64-67
+%
+%Въпрос/проблеми:
+%Навсякъде в текста съм ползвал директно ( и ),
+%но на места изглежда зле, заради знака за сума,
+%който е по-голям. \left( и \right) пък ми изглеждат
+%твърде големи. Какво в крайна сметка да ползвам?
+%\mu\left(\sum\limits_{j \in J}A_{j}\right)
+%или
+%\mu(\sum\limits_{j \in J}A_{j})
+%
+%Номерацията на уравненията и твърденията е объркваща, тъй като
+%се преплитат едно в друго, опитал съм се да запазя,
+%до колкото е възможно, оригиналния вид на текста.
+%
+%Това подреждане води до промяна на indent-a на някои места.
+%
+%Заредено с tv2sample.tex при брояч
+%\setcounter{chapter}{3}               %Глава
+\documentclass[draft]{tv2}
+
+\theoremstyle{plain}
+\newtheorem{thm}{Теорема}[chapter]%\label{thm:1.1}
+\newtheorem*{Theorem}{Теорема}
+\newtheorem{lemma}{Лема}[chapter]%\label{l:1.1}
+\newtheorem{prop}{Твърдение}[chapter]%\label{prop:1.1}
+
+\newtheorem{cor}{Следствие}[chapter]%\label{cor:1.1}
+\newtheorem*{Cor}{Следствие}
+\theoremstyle{definition}
+\newtheorem{dfn}{Определение}[chapter]%\label{dfn:1.1}
+\newtheorem{ex}{Пример}[chapter]%\label{ex:1.2.3}
+\newtheorem*{Ex}{Пример}%
+
+\theoremstyle{remark}
+\newtheorem{note}{Забележка}[chapter]%\label{note:1.2}
+\newtheorem*{Note}{Забележка}
+
+%Броячи, които се настройват според конкретния текст
+\setcounter{chapter}{3}               %Глава
+%\setcounter{equation}{1}              %Уравнение
+%\setcounter{pr}{1}                    %Задача
+%\setcounter{note}{1}                  %Забележка
+%\setcounter{ex}{1}                    %Пример
+%\setcounter{thm}{1}                   %Теорема
+%\setcounter{lemma}{1}                 %Лема
+%\setcounter{cor}{1}                   %Следствие
+%\setcounter{dfn}{1}                   %Определение
+%\setcounter{note}{1}                  %Забележка
+%\setcounter{ex}{1}                    %Пример
+%\setcounter{pr}{1}                    %Задача
+\pagestyle{main}
+\begin{document}
+
+\chapter[Мерки. Теореми на Жордан"--~Хан, Лебег и Радон"--~Никодим]
+{Мерки. Теореми на Жордан"--~Хан,\\Лебег и Радон"--~Никодим}\label{ch:4}
+
+С понятието "`вероятностна мярка"' читателят е запознат от изложението в
+глава~1. %\ref{ch:1}.
+Отличителни черти на вероятностните мерки са:
+а) те са нормирани ($\bbP (\gO)=1$) и б) те са неотрицателни ($\bbP(A)\geq 0$).
+Ще напомним, че за вероятностните мерки свойствата адитивност и непрекъснатост
+в нулата са еквивалентни на изброима адитивност. Именно последното свойство
+лежи в основата на общото понятие "`мярка"'.
+
+\begin{dfn}\label{dfn:4.1}
+Мярка $\mu$ в измеримото пространство $(\gO,\calF)$ се нарича всяка функция
+$\mu = \mu(A)$, дефинирана в $\gs$-алгебрата $\calF$ и приемаща стойности в
+$(-\infty,+\infty]$, която удовлетворява условията:
+\begin{align}\label{4.1}
+&\mu(\es) = 0,\\
+\label{4.2}
+&\mu\left(\sum_{j \in J}A_{j}\right) = \sum_{j\in J}\mu(A_j)
+\end{align}
+за всяко изброимо семейство $\{A_{j},j \in J\}\subseteq \calF$ от непресичащи
+се ($A_{i} \cap A_{j} = \es$, $i \neq j$) подмножества на $\gO$.
+
+Мярката $\mu$ се нарича положителна ($\mu\geq0$), ако $\mu(A)\geq 0$,
+$A\in\calF$, и ограничена, ако $\sup\limits_{A \in \calF}|\mu(A)|<\infty$.
+Всяка положителна и нормирана ($\mu(\gO)=1$), а следователно и ограничена,
+мярка $\mu$ е вероятностна мярка в $(\gO,\calF)$.
+\end{dfn}
+
+В тази глава ще изложим три класически теореми, разкриващи структурата на всяка
+мярка и съотношенията (абсолютна непрекъснатост, сингулярност) между мерките,
+представляващи най-голям интерес за теорията на вероятностите.
+
+\begin{thm}[Жордан"--~Хан]\label{thm:4.1}
+Нека $\mu$ е мярка в $(\gO,\calF)$. Тогава
+\begin{enumerate}[\indent\rm1)]
+\item\label{itm:4.1}
+Равенствата
+\begin{align*}
+\mu^{+}(A) &= \sup\{\mu(B),B\subseteq A\},\\
+\mu^{-}(A) &= \sup\{-\mu(B),B\subseteq A\}
+\end{align*}
+дефинират две положителни мерки $\mu^{+}$ и $\mu^{-}$ в $(\gO,\calF)$.
+\item
+Мярката $\mu^{-}$ е ограничена и $\mu=\mu^{+}-\mu^{-}$.
+\item\label{itm:4.3}
+Съществува множество $D \in \calF$ такова, че
+\begin{ena}
+\item
+$\mu(A) \geq 0$ за всяко $A \subseteq D$,
+\item
+$\mu(A) \leq 0$ за всяко $A \subseteq \ol{D}$,
+\end{ena}
+и следователно $\mu^{+}(A)=\mu(A\cap D)$, 
+$\mu^{-}(A)=-\mu\left(A \cap \ol{D}\right)$,
+$A\in \calF$.
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+Доказателството ще разделим на няколко етапа с цел отделните моменти да бъдат
+подробно изяснени. Ключов момент в него е твърдението~\ref{itm:4.3}),
+свързано със съществуването на подходящо множество \mbox{$D \in \calF$}.
+%\begin{enumerate}[A.]
+\begin{asparaenum}[\bfseries A.]
+\parindent=1.5cc
+\item\label{4.1.A}
+Дефинираме класа $\calB = \{B \in \calF, \mu^{+}(B)=0\}$. Този клас $\calB$
+е затворен относно изброими обединения. Наистина, ако
+$A\subseteq\bigcup\limits_{n\ge 0} B_{n}$, $B_{n}\in\calB$, $n\geq 0$, то
+\[
+\mu(A)=\sum_{n\geq 0}\mu\left(A\cap\left(B_{n}\setminus\bigcup_{m<n}B_{m}\right)\right)
+\leq \sum_{n \geq 0} \mu^{+}(B_{n})=0.
+\]
+Следователно, $\bigcup\limits_{n\geq 0}B_{n}\in\calB$.
+\item\label{4.1.B}
+Точната долна граница $\beta=\inf\{\mu(B),B \in \calB\}$ \textbf{се достига} за
+някое множество от $\calB\subseteq\calF$ и следователно $-\infty<\beta\le 0$.
+Наистина, ако $B_{n}\in\calB$, $n\geq 0$, имат свойството
+$\mu(B_{n})\xrightarrow[n\to\infty]{}\beta$, то $\bigcup\limits_{n\ge 0}B_{n}\in\calB$
+и за всяко $m\ge 0$ имаме
+\[
+\beta\le\mu\left(\bigcup_{n\ge 0}B_n\right) =
+\mu(B_{m}) + \mu\left[\left(\bigcup_{n\ge 0}B_{n}\right)\setminus B_{m}\right]
+\le\mu(B_{m})\xrightarrow[m\to\infty]{}\beta.
+\]
+Така, $-\infty < \mu\left(\bigcup\limits_{n \geq 0}B_n\right) = \beta \leq 0$.
+\item\label{4.1.C}
+\textbf{Полагаме} $D=\ol{\left(\bigcup\limits_{n\ge 0}B_n\right)}$, при което
+$D\in\calF$, $\ol{D}\in\calB$, $\mu\left(\ol{D}\right)=\beta$. Този избор на $D$
+осигурява (за всяко $A\in\calF$) изпълнението на следните съотношения:
+\begin{align}
+\label{4.3}
+&\mu(A)\leq 0 \text{ за всяко $A\subseteq\ol{D}$},\\
+\label{4.4}
+&\mu^{+}(A)>0 \text{ за всяко $A\subseteq D$, за което $\mu(A)<0$}.
+\end{align}
+Действително~\eqref{4.3} е очевидно, а ако $A\subseteq D$, $\mu(A)<0$ и
+$\mu^{+}(A)=0$, то $A\in\calB$, $A+\ol{D}\in\calB$, при което
+\[
+\mu\left(A+\ol{D}\right)=\mu(A)+\mu\left(\ol{D}\right)<\mu\left(\ol{D}\right)=\beta
+\]
+и стигаме до противоречие с избора на $\beta$.
+\item\label{4.1.D}
+Ще покажем, че от~\eqref{4.4} следва свойството
+\begin{equation}\label{4.5}
+\mu(A) \geq 0 \text{ за всяко $A\subseteq D$.}
+\end{equation}
+(Очевидно~\eqref{4.3} и~\eqref{4.5} доказват съществуването на желаното множество
+$D$ от~$\calF$).
+
+\textbf{Да допуснем противното}, \te че съществува $\wt{A}\subseteq D$,
+за което $\mu(\wt{A}) < 0$.
+
+\begin{asparaenum}[\bfseries\theenumi. a)]
+\parindent=1.5cc
+\item
+Без ограничение на общността може да считаме, че
+\begin{equation}
+\wt{A} \subseteq D,
+\quad
+\mu(\wt{A}) < 0,
+\quad
+0 < \mu^{+}(\wt{A}) < \infty.
+\tag{$*$}\label{4.1.*}
+\end{equation}
+Наистина, ако за всяко $A'\subseteq \wt{A}$ с $\mu(A')<0$ имаме
+$\mu^{+}(A')=\infty$, то съществува $A^{(0)}\subseteq\wt{A}$ с
+$\mu\left(A^{(0)}\right)\ge 1$ (вземете например $A'=\wt{A}$ и вижте
+определението на $\mu^{+}\left(\wt{A}\right)$). Аналогично, съществува множество
+$A^{(1)}\subseteq\wt{A}\setminus A^{(0)}$, за което
+\mbox{$\mu\left(A^{(1)}\right)\ge 1$}
+и т.\,н. Получаваме редица $A^{(0)},A^{(1)},A^{(2)},\dots$ от
+непресичащи се ($A^{(j)}\subseteq \wt{A}\setminus\bigcup\limits_{i<j}A^{(i)}$)
+подмножества на $\wt{A}$, за които $\mu\left(A^{(j)}\right)\ge 1$, $j\ge 0$,
+и значи
+\[
+\mu\left(\sum_{j\ge 0}A^{(j)}\right)=+\infty,
+\quad
+\sum_{j\ge 0}A^{(j)}\subseteq \wt{A},
+\]
+при което неравенството
+$\mu\left(\wt{A}\setminus\sum\limits_{j\ge 0}A^{(j)}\right)+
+\mu\left(\sum\limits_{j\ge 0}A^{(j)}\right)=\mu(\wt{A})<0$ е невъзможно.
+И така, допускането на противното означава съществуване на множество
+$\wt{A}\in\calF$ със свойствата~\eqref{4.1.*}.
+\item
+Ще покажем, че съществуването на (поне едно) множество $\wt{A}\in\calF$
+със свойствата~\eqref{4.1.*} противоречи на свойството~\eqref{4.4} на $D$
+(в което $A\in\calF$ е произволно!).
+
+Нека $A_0\subseteq\wt{A}$ е такова, че
+$\mu(A_{0})\ge\frac12\mu^{+}\left(\wt{A}\right)>0$.
+Тогава
+\[
+\wt{A}\setminus A_{0}\subseteq D,
+\quad
+\mu\left(\wt{A}\setminus A_{0}\right)=\mu\left(\wt{A}\right)-\mu(A_0)<
+0-\mu(A_0)<0
+\]
+и $0<\mu^+\left(\wt{A}\setminus A_0\right)<\infty$.
+Виждаме, че $\wt{A}\setminus A_{0}$ има свойства, аналогични на~\eqref{4.1.*}.
+\textbf{По индукция} строим редица $A_{n}$, $n\ge 0$, от подмножества
+$A_{n}\subseteq\wt{A}\subseteq D$ такива, че
+\begin{equation}\label{4.6}
+A_{n+1}\subseteq\wt{A}\setminus\sum_{m\leq n}A_{m},
+\quad
+\mu(A_{n+1})\ge\frac12\mu^{+}\left(\wt{A}\setminus\sum_{m\le n}A_{m}\right)>0.
+\end{equation}
+Съществуването на множеството $A_{n+1}$ следва от неравенствата
+\begin{equation}\label{4.7}
+\mu\left(\wt{A}\setminus\sum_{m\le n}A_{m}\right)<0,
+\quad
+0<\mu^{+}\left(\wt{A}\setminus\sum_{m\le n}A_{m}\right)<\infty,
+\end{equation}
+които се установяват за всяко $n\ge 0$, и дефиницията на $\mu^{+}$.
+
+Така получаваме равенството
+\[
+\mu(\wt{A})=\mu\left(\wt{A}\setminus\sum_{n\ge 0}A_{n}\right) +
+\mu\left(\sum_{n\ge 0}A_{n}\right) =
+\mu\left(\wt{A}\setminus\sum_{n\ge 0}A_{n}\right) + \sum_{n\ge 0}\mu(A_{n}),
+\]
+където, от една страна, $\mu(\wt{A}) < 0$, $\mu(A_{n}) > 0$, $n \ge 0$,
+и следователно
+\begin{equation}\label{4.8}
+\mu\left(\wt{A}\setminus\sum_{n\ge 0} A_{n}\right)<0.
+\end{equation}
+От друга страна, $\sum\limits_{n\ge 0}\mu(A_{n})<\infty$ и затова
+$\lim\limits_{n\to\infty}\mu(A_{n})=0$, откъдето според~\eqref{4.6} имаме
+\[
+\mu^{+}\left(\wt{A}\setminus\sum_{n\ge 0}A_{n}\right) \le
+\mu^{+}\left(\wt{A}\setminus\sum_{m=0}^{n}A_{m}\right)\le 2\mu(A_{n+1})
+\xrightarrow[n\to\infty]{}0,
+\]
+\te
+\begin{equation}\label{4.9}
+\mu^{+}\left(\wt{A}\setminus\sum_{n\ge 0}A_{n}\right)=0.
+\end{equation}
+
+Свойствата~\eqref{4.8} и~\eqref{4.9} на множеството
+$A=\wt{A}\setminus\sum\limits_{n\ge 0}A_{n}$
+са несъвместими със свойството~\eqref{4.4} на $D$. Следователно, допускането
+(на противното) в точка \ref{4.1.D}. не е вярно, с което доказахме~\eqref{4.5}
+и съществуването на подходящото множество $D\in\calF$ от
+твърдението~\ref{itm:4.3}) в теоремата.
+\end{asparaenum}
+\item\label{4.1.E}
+Нека $B\subseteq A$ са множества от $\calF$. Тогава (вж.~\eqref{4.3} и~\eqref{4.5})
+\[
+\begin{split}
+\mu(B) &= \mu(B \cap D) + \mu\left(B \cap \ol{D}\right)\\
+&=\mu(A \cap D) - \mu((A \setminus B) \cap D)+\mu\left(B \cap \ol{D}\right)
+\leq \mu(A \cap D).
+\end{split}
+\]
+Следователно,
+\begin{equation}\label{4.10}
+\mu^{+}(A) = \sup\{\mu(B), B \subseteq A\} = \mu(A\cap D) \geq 0,
+\end{equation}
+което показва, че $\mu^{+}$ е мярка, при това положителна мярка в измеримото
+пространство $(\gO, \calF)$.
+
+Аналогично се показва, че
+\begin{equation}\label{4.11}
+\mu^{-}(A)=\sup\{-\mu(B),B\subseteq A\}=-\mu\left(A \cap \ol{D}\right) \ge 0,
+\end{equation}
+откъдето следва, че $\mu^{-}$ е положителна мярка в $(\gO,\calF)$ и
+въобще твърдението~\ref{itm:4.1}).
+
+\item\label{4.1.F}
+\dots
+\qedhere
+\end{asparaenum}
+\end{proof}
+\end{document}
