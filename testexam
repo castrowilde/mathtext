@@ -1,0 +1,66 @@
+\documentclass[leqno,11pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{cmap} % cmap позволява търсене на думи на кирилица
+\usepackage[T2A]{fontenc} % кодировка за шрифтове на кирилица
+\usepackage[cp1251]{inputenc} % кодировка windows-1251 за кирилица
+\usepackage[english,bulgarian]{babel} % писане на български и английски език, последният език е текущ
+%\usepackage{bibtex}
+\newtheorem{theorem}{Теорема}
+\newcommand{\newi}{\text{i}}
+\newcommand{\newd}{\text{d}}
+\newcommand{\newe}{\text{e}}
+\title{Изпит}
+
+\author{Християн Емилов Марков, ф.н. 00147}
+\date{24 май 2017 г.}
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\section*{Увод}
+Примерите за този изпит са взети от \cite{sitectan}.
+\section{Производни}
+\textbf{Правило за диференциране:}
+$\{f[g[h(x)]]\}' = f'[g[h(x)]]g'[h(x)]h'(x)$.
+Производната от \textit{n}-ти ред на произведението на функциите $f(x)$ и $g(x)$ се пресмята по формулата:
+\begin{equation}\label{eq:one}
+\frac{\newd^n}{\newd x^n}[f(x)g(x)] = \sum\limits_{i=0}^{n}\binom{n}{i}f^{(i)}(x)g^{(n-i)}(x).
+\end{equation}
+\section{Комплексен анализ}
+\begin{theorem}[за резидуумите]\label{th:one}
+Нека $f$ e аналитична функция в областта $G$ с изключение на изолираните особени точки $a_1, a_2, \dots, a_m$. Ако $\gamma$ е затворена ректифицируема крива в $G$, която не минава през нито една от точките $a_k$, и ако $\gamma \approx 0$ в $G$, то
+\end{theorem}
+\begin{equation}
+\frac{1}{2\pi \newi} \int\limits_{\gamma}f = \sum\limits_{k=1}^{m}n(\gamma;a_{k})Res(f;a_k).
+\end{equation}
+\begin{theorem}[за максимума]\label{th:two}
+Нека $G$ е ограничено отворено множество в $\mathbb{C}$ и $f$ е непрекъсната функция в $G^{-}$, която е аналитична в $G$. Тогава
+\end{theorem}
+\begin{equation}\notag
+\text{max}{|f(z)|: z \in G^{-}} = \text{max}\{|f(z)|: z \in \partial G\}.
+\end{equation}
+
+\section{Гама функция}
+\textit{Гама функцията $\Gamma(z)$ се дефинира като}
+
+\begin{equation} \label{eq:three}
+\Gamma(z)\equiv \lim\limits_{n \to \infty} \frac{(n+1)^z n!}{z(z+1) \cdots (z+n)} \equiv \int_{0}^{\infty} e^{-t}t^{z-1} \, \newd t.
+\end{equation}
+От (\ref{eq:three}) се вижда, че $\Gamma(1)=1$. Може да се докаже, че за цели положителни числа $n$
+
+\begin{equation}\notag
+\begin{split}
+\Gamma(n) &= (n-1)\Gamma(n-1) = (n-1)(n-2)\Gamma(n-2) = \dots\\
+&= (n-1)(n-2) \dots 1 = (n-1)!.
+\end{split}
+\end{equation}
+
+\section*{Заключение}
+Теореми \ref{th:one} и \ref{th:two} се изучават във всеки курс по комплексен анализ, а формула (\ref{eq:one}) би трябвало да е известна на всеки студент по математика.
+
+\begin{thebibliography}{1}
+\bibitem{sitectan}{\verb'www.ctan.org'}
+\end{thebibliography}
+\end{document} 
